@@ -12,7 +12,6 @@ int WINAPI WinMain(HINSTANCE instanceHandle, HINSTANCE prevInstanceHandle, LPSTR
 		{
 			running = game->frame();
 		}
-
 		game = nullptr;
 		Game::shutdown();
 	}

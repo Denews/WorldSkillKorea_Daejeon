@@ -5,19 +5,22 @@ class GameTimer
 {
 public:
 	GameTimer();
-	GameTimer(GameTimer&);
-	~GameTimer();
+	GameTimer(GameTimer&) = default;
+	virtual ~GameTimer() = default;
 
-	float totalTime() const;
-	float deltaTime() const;
+	virtual float totalTime() const;
+	virtual float deltaTime() const;
 
-	void Start();
-	void Stop();
-	void Reset();
-	void Tick();
+	virtual void start();
+	virtual void stop();
+	virtual void resume();
+	virtual void reset();
+	virtual void tick();
 private:
-	INT64 m_StartTime;
-	INT64 m_StoppedTime;
+	INT64 m_BaseTime;
+	INT64 m_PausedTime;
+	INT64 m_StopTime;
+
 	INT64 m_CurTime;
 	INT64 m_PrevTime;
 	INT64 m_DeltaTime;

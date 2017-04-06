@@ -11,5 +11,6 @@ public:
 private:
 	Game(HINSTANCE instanceHandle, int show);
 	~Game();
-	static Game* m_Game;
+	static Game* s_Game;
+	int m_FrameCounter;
 };

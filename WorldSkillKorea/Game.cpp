@@ -1,22 +1,40 @@
 #include "Game.h"
 #include "GameState.h"
+#include <cstdio>
 
-Game* Game::m_Game = nullptr;
+Game* Game::s_Game = nullptr;
 
-Game::Game(HINSTANCE instanceHandle, int show)
+Game::Game(HINSTANCE instanceHandle, int show) :
+	m_FrameCounter(0)
 {
 	GameState::initialize(instanceHandle, show);
 }
 
 Game::~Game()
 {
-
+	GameState::shutdown();
 }
 
 bool Game::frame()
 {
 	bool result = true;
+	GameState::frameTimer->tick();
+	m_FrameCounter += 1;
+	if (GameState::frameTimer->totalTime() > 1)
+	{
+		char str[100];
+		sprintf_s(str, "FPS : %d, mSPF : %f\n", m_FrameCounter, GameState::frameTimer->totalTime() * 1000 / m_FrameCounter);
+		OutputDebugStringA(str);
+		GameState::frameTimer->reset();
+		m_FrameCounter = 0;
+	}
 	GameState::window->pollEvents();
+	GameState::input->pollInput();
+
+	if (GameState::input->getKey(DIK_LALT) && GameState::input->getKey(DIK_F4))
+	{
+		result = false;
+	}
 
 	GameState::graphics->draw();
 
@@ -30,19 +48,19 @@ bool Game::frame()
 
 Game* Game::getGameClass(HINSTANCE instanceHandle, int show)
 {
-	if (m_Game) return m_Game;
+	if (s_Game) return s_Game;
 	else
 	{
-		m_Game = new Game(instanceHandle, show);
-		return m_Game;
+		s_Game = new Game(instanceHandle, show);
+		return s_Game;
 	}
 }
 
 void Game::shutdown()
 {
-	if (m_Game)
+	if (s_Game)
 	{
-		GameState::shutdown();
-		delete m_Game;
+		delete s_Game;
+		s_Game = nullptr;
 	}
 }

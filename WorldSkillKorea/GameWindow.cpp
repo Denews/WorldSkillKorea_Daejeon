@@ -42,15 +42,15 @@ void GameWindow::pollEvents()
 {
 	MSG msg = { 0 };
 
-	if (PeekMessage(&msg, m_WindowHandle, 0, 0, PM_REMOVE))
+	if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
-	}
 
-	if (msg.message == WM_QUIT)
-	{
-		m_ShouldClose = true;
+		if (msg.message == WM_QUIT)
+		{
+			m_ShouldClose = true;
+		}
 	}
 }
 
