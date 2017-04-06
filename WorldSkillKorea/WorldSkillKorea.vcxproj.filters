@@ -13,39 +13,75 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{7a468cc6-ce92-4d60-8f6d-7cb375df809c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Utils">
+      <UniqueIdentifier>{ce8f322e-bf1c-43f9-8dbe-9fea920a6e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Graphics">
+      <UniqueIdentifier>{abfe6c48-d164-493a-9826-d59337d332c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game">
+      <UniqueIdentifier>{019a5589-b3aa-4b83-a4f4-81fec83f742d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Graphcis">
+      <UniqueIdentifier>{ffa524d6-be1f-4b65-a2bb-be113aa56720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Utils">
+      <UniqueIdentifier>{0f15c77f-9d48-4b88-ac25-66802b363d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Input">
+      <UniqueIdentifier>{68eaab36-20f5-4a80-8908-647985ca481e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Input">
+      <UniqueIdentifier>{61be0654-084b-4115-b98f-bf6af9775b49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>소스 파일\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTimer.cpp">
+      <Filter>소스 파일\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>소스 파일\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameConstants.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>헤더 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>헤더 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Graphics.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\Graphcis</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTimer.h">
+      <Filter>헤더 파일\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>헤더 파일\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

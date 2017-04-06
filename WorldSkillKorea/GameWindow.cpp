@@ -35,7 +35,7 @@ GameWindow::GameWindow(HINSTANCE instanceHandle, int show) :
 
 GameWindow::~GameWindow()
 {
-	
+	DestroyWindow(m_WindowHandle);
 }
 
 void GameWindow::pollEvents()

@@ -164,16 +164,20 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConstants.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameTimer.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
