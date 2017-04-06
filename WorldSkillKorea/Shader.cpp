@@ -54,12 +54,12 @@ Shader::Shader(ID3D11Device* device) :
 	ied[0].SemanticName = "POSITION";
 
 	ied[1].AlignedByteOffset = 16;
-	ied[1].Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+	ied[1].Format = DXGI_FORMAT_R32G32_FLOAT;
 	ied[1].InputSlot = 0;
 	ied[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
 	ied[1].InstanceDataStepRate = 0;
 	ied[1].SemanticIndex = 0;
-	ied[1].SemanticName = "COLOR";
+	ied[1].SemanticName = "TEXCOORD";
 
 	hr = device->CreateInputLayout(ied, 2, vertexShaderBuffer->GetBufferPointer(), 
 		vertexShaderBuffer->GetBufferSize(), &m_InputLayout);

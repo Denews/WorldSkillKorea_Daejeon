@@ -38,17 +38,17 @@ void VertexArray::draw(ID3D11DeviceContext* deviceContext)
 void VertexArray::createVertexBuffer(ID3D11Device* device)
 {
 	VertexInputType vertices[VERTEX_COUNT];
-	vertices[0].position = { -0.5f, 0.5f, 0.5f, 1.0f };
-	vertices[0].color = { 1.0f, 0.0f, 0.0f, 0.0f };
+	vertices[0].position = { -m_Width/2, m_Height/2, 0.5f, 1.0f };
+	vertices[0].tex = { 0.0f, 0.0f };
 
-	vertices[1].position = { 0.5f, 0.5f, 0.5f, 1.0f };
-	vertices[1].color = { 1.0f, 0.0f, 0.0f, 0.0f };
+	vertices[1].position = { m_Width / 2, m_Height / 2, 0.5f, 1.0f };
+	vertices[1].tex = { 1.0f, 0.0f };
 
-	vertices[2].position = { 0.5f, -0.5f, 0.5f, 1.0f };
-	vertices[2].color = { 1.0f, 0.0f, 0.0f, 0.0f };
+	vertices[2].position = { m_Width / 2, -m_Height / 2, 0.5f, 1.0f };
+	vertices[2].tex = { 1.0f, 1.0f };
 
-	vertices[3].position = { -0.5f, -0.5f, 0.5f, 1.0f };
-	vertices[3].color = { 1.0f, 0.0f, 0.0f, 0.0f };
+	vertices[3].position = { -m_Width / 2, -m_Height / 2, 0.5f, 1.0f };
+	vertices[3].tex = { 0.0f, 1.0f };
 
 	D3D11_BUFFER_DESC vbd;
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
@@ -63,7 +63,11 @@ void VertexArray::createVertexBuffer(ID3D11Device* device)
 	vrd.SysMemPitch = 0;
 	vrd.SysMemSlicePitch = 0;
 
-	device->CreateBuffer(&vbd, &vrd, &m_VertexBuffer);
+	HRESULT hr = device->CreateBuffer(&vbd, &vrd, &m_VertexBuffer);
+	if (FAILED(hr))
+	{
+		throw "Create VertexBuffer Failed";
+	}
 }
 
 void VertexArray::createIndexBuffer(ID3D11Device* device)
@@ -82,5 +86,9 @@ void VertexArray::createIndexBuffer(ID3D11Device* device)
 	ird.SysMemPitch = 0;
 	ird.SysMemSlicePitch = 0;
 
-	device->CreateBuffer(&ibd, &ird, &m_IndexBuffer);
+	HRESULT hr = device->CreateBuffer(&ibd, &ird, &m_IndexBuffer);
+	if (FAILED(hr))
+	{
+		throw "Create IndexBuffer Failed";
+	}
 }

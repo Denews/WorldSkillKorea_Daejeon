@@ -31,6 +31,10 @@ bool Game::frame()
 	GameState::window->pollEvents();
 	GameState::input->pollInput();
 
+	float delta = GameState::frameTimer->deltaTime();
+	if (delta > 0.1) delta = 0.1f;
+	GameState::curLevel->update(delta);
+
 	if (GameState::input->getKey(DIK_LALT) && GameState::input->getKey(DIK_F4))
 	{
 		result = false;

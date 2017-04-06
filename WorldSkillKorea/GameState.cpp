@@ -1,9 +1,11 @@
 #include "GameState.h"
+#include "Title.h"
 
 GameWindow* GameState::window = nullptr;
 Graphics* GameState::graphics = nullptr;
 GameTimer* GameState::frameTimer = nullptr;
 Input* GameState::input = nullptr;
+GameLevel* GameState::curLevel = nullptr;
 
 void GameState::initialize(HINSTANCE instanceHandle, int show)
 {
@@ -11,6 +13,7 @@ void GameState::initialize(HINSTANCE instanceHandle, int show)
 	if(!graphics) graphics = new Graphics(window->getWindowHandle());
 	if (!input) input = new Input(instanceHandle, window->getWindowHandle());
 	if (!frameTimer) frameTimer = new GameTimer();
+	if (!curLevel) curLevel = new Title(graphics->getDevice());
 
 	frameTimer->reset();
 	frameTimer->start();
@@ -18,6 +21,11 @@ void GameState::initialize(HINSTANCE instanceHandle, int show)
 
 void GameState::shutdown()
 {
+	if (curLevel)
+	{
+		delete curLevel;
+		curLevel = nullptr;
+	}
 	if (frameTimer)
 	{
 		delete frameTimer;

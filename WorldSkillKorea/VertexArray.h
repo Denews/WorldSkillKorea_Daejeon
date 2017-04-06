@@ -8,7 +8,7 @@ private:
 	struct VertexInputType
 	{
 		XMFLOAT4 position;
-		XMFLOAT4 color;
+		XMFLOAT2 tex;
 	};
 	static const int VERTEX_COUNT = 4;
 	static const int INDEX_COUNT = 6;

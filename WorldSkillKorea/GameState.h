@@ -3,6 +3,7 @@
 #include "Graphics.h"
 #include "GameTimer.h"
 #include "Input.h"
+#include "GameLevel.h"
 
 const class GameState
 {
@@ -11,6 +12,7 @@ public:
 	static Graphics* graphics;
 	static GameTimer* frameTimer;
 	static Input* input;
+	static GameLevel* curLevel;
 public:
 	static void initialize(HINSTANCE instanceHandle, int show);
 	static void shutdown();

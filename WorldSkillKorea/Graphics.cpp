@@ -1,12 +1,14 @@
 #include "Graphics.h"
 #include "GameConstants.h"
+#include "GameState.h"
 
 Graphics::Graphics(HWND windowHandle) :
 	m_Device(nullptr),
 	m_DeviceContext(nullptr),
 	m_SwapChain(nullptr),
 	m_RenderTargetView(nullptr),
-	m_Shader(nullptr)
+	m_Shader(nullptr),
+	m_State(nullptr)
 {
 	HRESULT hr;
 
@@ -150,7 +152,29 @@ Graphics::Graphics(HWND windowHandle) :
 	m_DeviceContext->RSSetViewports(1, &viewport);
 
 	m_Shader = new Shader(m_Device);
-	m_Triangle = new VertexArray(m_Device, 1.0f, 1.0f);
+
+	D3D11_SAMPLER_DESC spd;
+	spd.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+	spd.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+	spd.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+	spd.BorderColor[0] = 1.0f;
+	spd.BorderColor[1] = 1.0f;
+	spd.BorderColor[2] = 1.0f;
+	spd.BorderColor[3] = 0.0f;
+	spd.ComparisonFunc = D3D11_COMPARISON_LESS_EQUAL;
+	spd.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+	spd.MaxAnisotropy = 16;
+	spd.MaxLOD = D3D11_FLOAT32_MAX;
+	spd.MinLOD = 0;
+	spd.MipLODBias = 0;
+
+	hr = m_Device->CreateSamplerState(&spd, &m_State);
+	if (FAILED(hr))
+	{
+		throw "Create SamplerState Failed";
+	}
+
+	XMStoreFloat4x4(&m_OrthoMatrix, XMMatrixOrthographicLH(GameConstants::width, GameConstants::height, 0.0f, 11.0f));
 }
 
 Graphics::~Graphics()
@@ -199,7 +223,10 @@ void Graphics::draw()
 	m_DeviceContext->ClearRenderTargetView(m_RenderTargetView, bg);
 
 	m_Shader->bind(m_DeviceContext);
-	m_Triangle->draw(m_DeviceContext);
+	m_DeviceContext->PSSetSamplers(0, 1, &m_State);
+
+	XMMATRIX o = XMMatrixOrthographicLH(GameConstants::width, GameConstants::height, 0.0f, 11.0f);
+	GameState::curLevel->draw(m_DeviceContext, o);
 
 	m_SwapChain->Present(0, 0);
 }
