@@ -5,7 +5,8 @@ Graphics::Graphics(HWND windowHandle) :
 	m_Device(nullptr),
 	m_DeviceContext(nullptr),
 	m_SwapChain(nullptr),
-	m_RenderTargetView(nullptr)
+	m_RenderTargetView(nullptr),
+	m_Shader(nullptr)
 {
 	HRESULT hr;
 
@@ -147,10 +148,18 @@ Graphics::Graphics(HWND windowHandle) :
 	viewport.Width = GameConstants::width;
 
 	m_DeviceContext->RSSetViewports(1, &viewport);
+
+	m_Shader = new Shader(m_Device);
+	m_Triangle = new VertexArray(m_Device, 1.0f, 1.0f);
 }
 
 Graphics::~Graphics()
 {
+	if (m_Shader)
+	{
+		delete m_Shader;
+		m_Shader = nullptr;
+	}
 	if (m_DepthStencilView)
 	{
 		m_DepthStencilView->Release();
@@ -188,6 +197,9 @@ void Graphics::draw()
 	const float bg[4] = { 0.0f, 1.0f, 1.0f, 0.0f };
 	m_DeviceContext->ClearDepthStencilView(m_DepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 	m_DeviceContext->ClearRenderTargetView(m_RenderTargetView, bg);
+
+	m_Shader->bind(m_DeviceContext);
+	m_Triangle->draw(m_DeviceContext);
 
 	m_SwapChain->Present(0, 0);
 }

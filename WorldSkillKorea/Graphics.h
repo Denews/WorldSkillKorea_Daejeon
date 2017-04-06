@@ -1,5 +1,7 @@
 #pragma once
 #include <D3D11.h>
+#include "Shader.h"
+#include "VertexArray.h"
 
 const class Graphics
 {
@@ -20,4 +22,6 @@ private:
 	UINT m_4xMsaaQuality;
 	ID3D11Texture2D* m_DepthStencilBuffer;
 	ID3D11DepthStencilView* m_DepthStencilView;
+	Shader* m_Shader;
+	VertexArray* m_Triangle;
 };
