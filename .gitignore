@@ -240,3 +240,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/WorldSkillKorea/Graphcis.cpp
+/WorldSkillKorea/Graphics.h
+/D3DClass.cpp
+/GameWindow.cpp
+/Input.cpp
