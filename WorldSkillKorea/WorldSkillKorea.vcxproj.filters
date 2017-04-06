@@ -37,6 +37,9 @@
     <Filter Include="소스 파일\Input">
       <UniqueIdentifier>{61be0654-084b-4115-b98f-bf6af9775b49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{96244e70-1300-4814-a2c6-3acb6c69f084}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,5 +86,13 @@
     <ClInclude Include="Input.h">
       <Filter>헤더 파일\Input</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="VertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

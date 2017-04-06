@@ -113,13 +113,8 @@ void Input::pollInput()
 	float x = m_MousePosition.x + m_CurMouseState->lX;
 	float y = m_MousePosition.y + m_CurMouseState->lY;
 
-	int left = -GameConstants::width / 2;
-	int right = GameConstants::width / 2;
-	int top = GameConstants::height / 2;
-	int bottom = -GameConstants::height / 2;
-
-	m_MousePosition.x = XMMax(XMMin(right, x), left);
-	m_MousePosition.y = XMMax(XMMin(top, x), bottom);
+	m_MousePosition.x = XMMax(XMMin(GameConstants::right, x), GameConstants::left);
+	m_MousePosition.y = XMMax(XMMin(GameConstants::top, x), GameConstants::bottom);
 }
 
 bool Input::getKeyPressed(int key) const
