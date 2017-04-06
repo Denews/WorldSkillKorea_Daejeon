@@ -5,20 +5,27 @@ Game* Game::m_Game = nullptr;
 
 Game::Game(HINSTANCE instanceHandle, int show)
 {
-	GameState::window = new GameWindow(instanceHandle, show);
+	GameState::initialize(instanceHandle, show);
 }
 
-bool Game::Frame()
+Game::~Game()
 {
+
+}
+
+bool Game::frame()
+{
+	bool result = true;
 	GameState::window->pollEvents();
+
+	GameState::graphics->draw();
+
 	if (GameState::window->windowShouldClose())
 	{
-		return false;
+		result =  false;
 	}
-	else
-	{
-		return true;
-	}
+
+	return result;
 }
 
 Game* Game::getGameClass(HINSTANCE instanceHandle, int show)
@@ -35,7 +42,7 @@ void Game::shutdown()
 {
 	if (m_Game)
 	{
-		delete GameState::window;
+		GameState::shutdown();
 		delete m_Game;
 	}
 }

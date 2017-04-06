@@ -54,12 +54,12 @@ void GameWindow::pollEvents()
 	}
 }
 
-bool GameWindow::windowShouldClose()
+bool GameWindow::windowShouldClose() const
 {
 	return m_ShouldClose;
 }
 
-HWND GameWindow::getWindowHandle()
+HWND GameWindow::getWindowHandle() const
 {
 	return m_WindowHandle;
 }

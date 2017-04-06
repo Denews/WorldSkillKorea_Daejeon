@@ -1,7 +1,7 @@
 #pragma once
 #include <Windows.h>
 
-class GameWindow
+const class GameWindow
 {
 public:
 	GameWindow() = delete;
@@ -10,8 +10,8 @@ public:
 	~GameWindow();
 
 	void pollEvents();
-	bool windowShouldClose();
-	HWND getWindowHandle();
+	bool windowShouldClose() const;
+	HWND getWindowHandle() const;
 private:
 	HWND m_WindowHandle;
 	bool m_ShouldClose;

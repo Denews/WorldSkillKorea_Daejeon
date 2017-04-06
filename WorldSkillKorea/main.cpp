@@ -10,8 +10,11 @@ int WINAPI WinMain(HINSTANCE instanceHandle, HINSTANCE prevInstanceHandle, LPSTR
 
 		while (running)
 		{
-			running = game->Frame();
+			running = game->frame();
 		}
+
+		game = nullptr;
+		Game::shutdown();
 	}
 	catch (char* errTxt)
 	{
