@@ -1,6 +1,4 @@
 #pragma once
-#include "GameLevel.h"
-#include "Button.h"
 #include "Texture.h"
 #include "ButtonCallbacks.h"
 #include "Background.h"

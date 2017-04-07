@@ -1,5 +1,11 @@
 #pragma once
 #include "Button.h"
+#include "Credit.h"
+#include "Stage1.h"
+#include "Introduce.h"
+#include "HowToPlay.h"
+#include "Ranking.h"
+#include "GameState.h"
 
 class StartCallback : public ButtonCallback
 {

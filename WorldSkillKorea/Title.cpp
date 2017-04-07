@@ -59,7 +59,7 @@ void Title::update(float deltaTime)
 	}
 
 	if (GameState::input->getKey(DIK_NUMPADENTER)) {
-		ButtonCallbacks[ButtonIndex]->onSelected();
+		Buttons[ButtonIndex]->select();
 	}
 
 	for (int i = 0; i < 6; i++) {
@@ -71,5 +71,7 @@ void Title::update(float deltaTime)
 void Title::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix)
 {
 	bg->draw(deviceContext, orthoMatrix);
-	Buttons[1]->draw(deviceContext, orthoMatrix);
+	for (int i = 0; i < 6; i++) {
+		Buttons[i]->draw(deviceContext, orthoMatrix);
+	}
 }

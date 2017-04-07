@@ -7,7 +7,7 @@ public:
 	virtual void onSelected() = 0;
 };
 
-class Button : GameObject
+class Button : public GameObject
 {
 public:
 	Button() = delete;
