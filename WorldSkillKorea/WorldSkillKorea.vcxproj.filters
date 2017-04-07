@@ -126,6 +126,12 @@
     <ClCompile Include="ButtonCallbacks.cpp">
       <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Submarine.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageConstants.cpp">
+      <Filter>소스 파일\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -193,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="Stage1.h">
       <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Submarine.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageConstants.h">
+      <Filter>헤더 파일\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
