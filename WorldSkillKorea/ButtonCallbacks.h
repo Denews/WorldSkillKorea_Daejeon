@@ -10,47 +10,35 @@
 class StartCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::curLevel = new Stage1(GameState::graphics->getDevice());
-	};
+	virtual void onSelected() override;
 };
 
 class IntroduceCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::curLevel = new Introduce(GameState::graphics->getDevice());
-	};
+	virtual void onSelected() override;
 };
 
 class HowToplayCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::curLevel = new HowToPlay(GameState::graphics->getDevice());
-	};
+	virtual void onSelected() override;
 };
 
 class RankingCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::curLevel = new Ranking(GameState::graphics->getDevice());
-	};
+	virtual void onSelected() override;
 };
 
 class CreditCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::curLevel = new Credit(GameState::graphics->getDevice());
-	};
+	virtual void onSelected() override;
 };
 
 class QuitCallback : public ButtonCallback
 {
 public:
-	virtual void onSelected() override {
-		GameState::gameShouldRunning = false;
-	};
+	virtual void onSelected() override;
 };
