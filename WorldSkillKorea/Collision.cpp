@@ -3,7 +3,7 @@
 #include <cmath>
 
 bool Collision::CircleCollision(XMFLOAT2 Spot1, XMFLOAT2 Spot2, float r1, float r2) {
-	if (((Spot2.x - Spot1.x)*(Spot2.x - Spot1.x) + (Spot2.y - Spot1.y)*(Spot2.y - Spot1.y)) > (r1+r2)*(r1+r2)) {
+	if (((Spot2.x - Spot1.x)*(Spot2.x - Spot1.x) + (Spot2.y - Spot1.y)*(Spot2.y - Spot1.y)) < (r1+r2)*(r1+r2)) {
 		return true;
 	}
 	else {

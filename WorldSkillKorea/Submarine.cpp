@@ -5,7 +5,8 @@
 Submarine::Submarine(ID3D11Device* device, Texture* normalTexture, Texture* movingTexture) :
 	GameObject(device, movingTexture, 512, 32),
 	m_NormalTexture(normalTexture),
-	m_MovingTexture(movingTexture)
+	m_MovingTexture(movingTexture),
+	m_Life(5)
 {
 
 }

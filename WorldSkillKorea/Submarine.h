@@ -12,8 +12,17 @@ public:
 	virtual void update(float deltaTime) override;
 
 	virtual XMFLOAT3 getPosition() const override;
+
+	void onHitted() {
+		m_Life -= 1;
+		if (m_Life == 0)
+		{
+			throw "Died!";
+		}
+	}
 private:
 	static const int SPEED = 1000;
 	Texture* m_MovingTexture;
 	Texture* m_NormalTexture;
+	int m_Life;
 };

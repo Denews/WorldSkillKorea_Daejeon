@@ -59,7 +59,7 @@ void Enemy1::update(float deltaTime)
 			XMStoreFloat2(&d, dir);
 			
 			m_Bullets[m_BulletArrayIndex] = new Bullet(GameState::graphics->getDevice(), m_BulletTexture, 
-				1000.0f, { getPosition().x, getPosition().y }, d);
+				1000.0f, { getPosition().x, getPosition().y }, d, m_Observer);
 			m_BulletTimer->reset();
 		}
 

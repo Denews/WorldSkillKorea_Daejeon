@@ -11,4 +11,5 @@ public:
 	SubmarineObserver(Submarine* submarine) : m_Submarine(submarine) {}
 
 	XMFLOAT3 getPosition() const { return m_Submarine->getPosition(); }
+	void hit() { m_Submarine->onHitted(); }
 };
