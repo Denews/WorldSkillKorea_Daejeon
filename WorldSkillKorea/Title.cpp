@@ -48,8 +48,8 @@ Title::~Title()
 	delete[] FocusedButtonTextures;
 	delete[] ButtonCallbacks;
 	delete[] Buttons;
-	delete[] bg;
-	delete[] BackgroundTexture;
+	delete bg;
+	delete BackgroundTexture;
 }
 
 void Title::update(float deltaTime)
@@ -77,12 +77,12 @@ void Title::update(float deltaTime)
 		Buttons[ButtonIndex]->focus();
 	}
 
-	if (GameState::input->getKeyPressed(DIK_NUMPADENTER)) {
-		Buttons[ButtonIndex]->select();
-	}
-
 	for (int i = 0; i < 6; i++) {
 		Buttons[i]->update(deltaTime);
+	}
+
+	if (GameState::input->getKeyPressed(DIK_NUMPADENTER)) {
+		Buttons[ButtonIndex]->select();
 	}
 
 }
