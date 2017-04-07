@@ -35,6 +35,8 @@ private:
 	int m_TorpedoArrayIndex;
 	GameTimer* m_TorpedoTimer;
 
-	Enemy1* e;
+
+	Enemy1** m_Enemy1s;
+
 	Texture* m_Monster1Texture;
 };

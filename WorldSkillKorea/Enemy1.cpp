@@ -1,7 +1,7 @@
 #include "Enemy1.h"
 #include "GameState.h"
 
-const float Enemy1::BULLET_INTERVAL = 0.1;
+const float Enemy1::BULLET_INTERVAL = 1.0f;
 
 Enemy1::Enemy1(ID3D11Device* device, Texture* texture, XMFLOAT2 position, SubmarineObserver* observer) :
 	GameObject(device, texture, 128, 64),
