@@ -11,8 +11,8 @@ Stage1::Stage1(ID3D11Device* device) :
 	m_BackgroundTexture = new Texture(device, "./res/Background/Stage1.dds");
 	m_Background = new Background(device, m_BackgroundTexture);
 	
-	m_SubmarineTexture[0] = new Texture(device, "./res/Player/Submarine.dds");
-	m_SubmarineTexture[1] = new Texture(device, "./res/Player/Submarine_2.dds");
+	m_SubmarineTexture[0] = new Texture(device, "./res/Player/Submarine_2.dds");
+	m_SubmarineTexture[1] = new Texture(device, "./res/Player/Submarine.dds");
 	m_Submarine = new Submarine(device, m_SubmarineTexture[0], m_SubmarineTexture[1]);
 
 	m_View = new View();
@@ -23,7 +23,8 @@ Stage1::~Stage1()
 	delete m_Background;
 	delete m_BackgroundTexture;
 	delete m_Submarine;
-	delete m_SubmarineTexture;
+	delete m_SubmarineTexture[0];
+	delete m_SubmarineTexture[1];
 	delete m_View;
 }
 
