@@ -1,5 +1,6 @@
 #pragma once
 #include "GameLevel.h"
+#include "Background.h"
 
 class Credit : public GameLevel {
 public:
@@ -12,4 +13,6 @@ public:
 	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix) override;
 
 private:
+	Texture* bgTexture;
+	Background* bg;
 };
