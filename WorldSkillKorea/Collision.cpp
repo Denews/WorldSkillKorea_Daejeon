@@ -80,6 +80,7 @@ bool Collision::CircleSquareCollision(XMFLOAT2 Spot1, XMFLOAT2 Spot2, XMFLOAT2 C
 	else if ((Bottom < Circle.y) && (Circle.y < Top) && ((abs(Circle.x - Left) < r) || (abs(Right - Circle.x) < r)) ) {
 		return true;
 	}
+
 	else if (((Spot1.x - Circle.x) * (Spot1.x - Circle.x) + (Spot1.y - Circle.y) * (Spot1.y - Circle.y)) < r*r) {
 		return true;
 	}
