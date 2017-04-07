@@ -58,6 +58,9 @@
     <Filter Include="리소스 파일\Enemy">
       <UniqueIdentifier>{31e166c0-a2b1-4629-8d7a-76992a457187}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Player">
+      <UniqueIdentifier>{21922205-1064-4c85-a9ad-43333219cd60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -97,9 +100,6 @@
       <Filter>소스 파일\Game\Level</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
-      <Filter>소스 파일\Game\Object</Filter>
-    </ClCompile>
-    <ClCompile Include="Text.cpp">
       <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
     <ClCompile Include="Background.cpp">
@@ -147,9 +147,6 @@
       <Filter>헤더 파일\Game\Level</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>헤더 파일\Game\Object</Filter>
-    </ClInclude>
-    <ClInclude Include="Text.h">
       <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
     <ClInclude Include="Background.h">
@@ -236,6 +233,24 @@
     </Image>
     <Image Include="res\Enemy\Starfish.dds">
       <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Player\Homing.dds">
+      <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Player\Nuclear.dds">
+      <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Player\Submarine.dds">
+      <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Player\Submarine_2.dds">
+      <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Player\Threeway.dds">
+      <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Player\Torpedo.dds">
+      <Filter>리소스 파일\Player</Filter>
     </Image>
   </ItemGroup>
 </Project>

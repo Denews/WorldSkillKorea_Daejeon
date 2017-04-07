@@ -173,7 +173,6 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="VertexArray.cpp" />
@@ -191,7 +190,6 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="VertexArray.h" />
@@ -241,6 +239,12 @@
     <Image Include="res\Enemy\Seonge.dds" />
     <Image Include="res\Enemy\Starfish.dds" />
     <Image Include="res\Number.dds" />
+    <Image Include="res\Player\Homing.dds" />
+    <Image Include="res\Player\Nuclear.dds" />
+    <Image Include="res\Player\Submarine.dds" />
+    <Image Include="res\Player\Submarine_2.dds" />
+    <Image Include="res\Player\Threeway.dds" />
+    <Image Include="res\Player\Torpedo.dds" />
     <Image Include="res\Text.dds" />
     <Image Include="res\Text_R.dds" />
   </ItemGroup>
