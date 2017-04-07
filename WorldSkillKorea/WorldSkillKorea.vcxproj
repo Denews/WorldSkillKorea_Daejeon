@@ -163,10 +163,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonCallbacks.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Credit.cpp" />
+    <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -190,9 +192,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Credit.h" />
+    <ClInclude Include="Enemy1.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConstants.h" />
     <ClInclude Include="GameLevel.h" />
@@ -209,6 +213,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Stage1.h" />
     <ClInclude Include="Submarine.h" />
+    <ClInclude Include="SubmarineObserver.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Torpedo.h" />

@@ -2,7 +2,7 @@
 #include "GameConstants.h"
 #include "GameState.h"
 
-const float Stage1::TORPEDO_INTERVAL = 0.5;
+const float Stage1::TORPEDO_INTERVAL = 0.3;
 
 Stage1::Stage1(ID3D11Device* device) :
 	m_Backgrounds(),
@@ -12,7 +12,8 @@ Stage1::Stage1(ID3D11Device* device) :
 	m_View(nullptr),
 	m_Torpedos(new Torpedo*[MAX_TORPEDO_COUNT]),
 	m_TorpedoArrayIndex(0),
-	m_TorpedoTimer(new GameTimer())
+	m_TorpedoTimer(new GameTimer()),
+	m_Monster1Texture(new Texture(device, "./res/Enemy/Monster1.dds"))
 {
 	m_BackgroundTexture = new Texture(device, "./res/Background/Stage1.dds");
 	m_Backgrounds[0] = new Background(device, m_BackgroundTexture);
@@ -32,6 +33,8 @@ Stage1::Stage1(ID3D11Device* device) :
 	}
 	m_TorpedoTimer->reset();
 	m_TorpedoTimer->start();
+
+	e = new Enemy1(device, m_Monster1Texture, { 1000, 0 }, new SubmarineObserver(m_Submarine));
 }
 
 Stage1::~Stage1()
@@ -91,6 +94,22 @@ void Stage1::update(float deltaTime)
 			}
 		}
 	}
+
+	if (e)
+	{
+		e->update(deltaTime);
+		XMFLOAT3 p = e->getPosition();
+		if (p.x < m_View->getRight())
+		{
+			e->act();
+		}
+		if (p.x < m_View->getLeft())
+		{
+			delete e;
+			e = nullptr;
+		}
+	}
+		
 }
 
 void Stage1::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
@@ -108,4 +127,9 @@ void Stage1::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
 			m_Torpedos[i]->draw(deviceContext, viewOrtho);
 		}
 	}
+	if (e)
+	{
+		e->draw(deviceContext, viewOrtho);
+	}
+	
 }

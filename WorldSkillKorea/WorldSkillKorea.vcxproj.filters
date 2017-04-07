@@ -141,6 +141,12 @@
     <ClCompile Include="Torpedo.cpp">
       <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy1.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -219,6 +225,15 @@
       <Filter>헤더 파일\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Torpedo.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy1.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SubmarineObserver.h">
       <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
   </ItemGroup>
