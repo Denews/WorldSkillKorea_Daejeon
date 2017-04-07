@@ -61,6 +61,9 @@
     <Filter Include="리소스 파일\Player">
       <UniqueIdentifier>{21922205-1064-4c85-a9ad-43333219cd60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Button">
+      <UniqueIdentifier>{ec53c629-aa5f-424a-bfe4-1ed2b60d0950}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -305,6 +308,42 @@
     </Image>
     <Image Include="res\Player\Torpedo.dds">
       <Filter>리소스 파일\Player</Filter>
+    </Image>
+    <Image Include="res\Button\Credit.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Credit_r.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\HowToPlay.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\HowToPlay_r.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Introduce.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Introduce_r.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Quit.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Quit_r.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Ranking.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Ranking_r.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Start.dds">
+      <Filter>리소스 파일\Button</Filter>
+    </Image>
+    <Image Include="res\Button\Start_r.dds">
+      <Filter>리소스 파일\Button</Filter>
     </Image>
   </ItemGroup>
 </Project>
