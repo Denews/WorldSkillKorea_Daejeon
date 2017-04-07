@@ -58,14 +58,13 @@ void Title::update(float deltaTime)
 		Buttons[ButtonIndex]->focus();
 	}
 
-	if (GameState::input->getKey(DIK_NUMPADENTER)) {
-		Buttons[ButtonIndex]->select();
-	}
-
 	for (int i = 0; i < 6; i++) {
 		Buttons[i]->update(deltaTime);
 	}
 
+	if (GameState::input->getKey(DIK_NUMPADENTER)) {
+		Buttons[ButtonIndex]->select();
+	}
 }
 
 void Title::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix)

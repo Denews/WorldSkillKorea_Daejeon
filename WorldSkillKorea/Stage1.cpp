@@ -36,6 +36,10 @@ void Stage1::update(float deltaTime)
 	{
 		m_View->setPosition(m_Submarine->getPosition().x - GameConstants::width / 2, 0);
 	}
+	else if (m_Submarine->getPosition().x < m_View->getLeft())
+	{
+		m_View->setPosition(m_Submarine->getPosition().x + GameConstants::width / 2, 0);
+	}
 }
 
 void Stage1::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
