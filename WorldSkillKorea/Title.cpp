@@ -1,5 +1,6 @@
 #include "Title.h"
 #include "ImageConstants.h"
+#include "ButtonCallbacks.h"
 
 
 Title::Title(ID3D11Device* device) :
@@ -8,10 +9,16 @@ Title::Title(ID3D11Device* device) :
 	ButtonCallbacks(new ButtonCallback*[6]),
 	Buttons(new Button*[6])
 {
+	ButtonCallbacks[0] = new StartCallback();
+	ButtonCallbacks[1] = new IntroduceCallback();
+	ButtonCallbacks[2] = new HowToplayCallback();
+	ButtonCallbacks[3] = new RankingCallback();
+	ButtonCallbacks[4] = new CreditCallback();
+	ButtonCallbacks[5] = new QuitCallback();
+
 	for (int i = 0; i < 6; i++) {
 		ButtonTextures[i] = new Texture(device, ImageConstants::ButtonPaths[i]);
 		FocusedButtonTextures[i] = new Texture(device, ImageConstants::FocusedbuttonPaths[i]);
-		ButtonCallbacks[i] = new ButtonCallback();
 		Buttons[i] = new Button(device, FocusedButtonTextures[i], ButtonTextures[i], ButtonCallbacks[i]);
 	}
 }
