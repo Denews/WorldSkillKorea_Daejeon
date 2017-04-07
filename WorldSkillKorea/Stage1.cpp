@@ -13,12 +13,13 @@ Stage1::Stage1(ID3D11Device* device) :
 	m_Torpedos(new Torpedo*[MAX_TORPEDO_COUNT]),
 	m_TorpedoArrayIndex(0),
 	m_TorpedoTimer(new GameTimer()),
-	m_Monster1Texture(new Texture(device, "./res/Enemy/Monster1.dds"))
+	m_Monster1Texture(new Texture(device, "./res/Enemy/Monster1.dds")),
+	m_Enemy1s(new Enemy1*[100])
 {
 	m_BackgroundTexture = new Texture(device, "./res/Background/Stage1.dds");
 	m_Backgrounds[0] = new Background(device, m_BackgroundTexture);
 	m_Backgrounds[1] = new Background(device, m_BackgroundTexture);
-	
+
 	m_SubmarineTexture[0] = new Texture(device, "./res/Player/Submarine_2.dds");
 	m_SubmarineTexture[1] = new Texture(device, "./res/Player/Submarine.dds");
 	m_Submarine = new Submarine(device, m_SubmarineTexture[0], m_SubmarineTexture[1]);
@@ -34,7 +35,9 @@ Stage1::Stage1(ID3D11Device* device) :
 	m_TorpedoTimer->reset();
 	m_TorpedoTimer->start();
 
-	e = new Enemy1(device, m_Monster1Texture, { 1000, 0 }, new SubmarineObserver(m_Submarine));
+	for (int i = 0; i < 100; i++) {
+		m_Enemy1s[i] = new Enemy1(device, m_Monster1Texture, { (float)(1000 + 500 * i), (float)(rand() % 780 - 390) }, new SubmarineObserver(m_Submarine));
+	}
 }
 
 Stage1::~Stage1()
@@ -61,7 +64,7 @@ void Stage1::update(float deltaTime)
 	m_Backgrounds[0]->update(deltaTime);
 	m_Backgrounds[1]->update(deltaTime);
 	m_Submarine->update(deltaTime);
-	
+
 	if (m_Submarine->getPosition().x > m_View->getPosition().x)
 	{
 		m_View->setPosition(m_Submarine->getPosition().x, 0);
@@ -95,21 +98,22 @@ void Stage1::update(float deltaTime)
 		}
 	}
 
-	if (e)
-	{
-		e->update(deltaTime);
-		XMFLOAT3 p = e->getPosition();
-		if (p.x < m_View->getRight())
+	for (int i = 0; i < 100; i++) {
+		if (m_Enemy1s[i])
 		{
-			e->act();
-		}
-		if (p.x < m_View->getLeft())
-		{
-			delete e;
-			e = nullptr;
+			m_Enemy1s[i]->update(deltaTime);
+			XMFLOAT3 p = m_Enemy1s[i]->getPosition();
+			if (p.x < m_View->getRight())
+			{
+				m_Enemy1s[i]->act();
+			}
+			if (p.x < m_View->getLeft())
+			{
+				delete m_Enemy1s[i];
+				m_Enemy1s[i] = nullptr;
+			}
 		}
 	}
-		
 }
 
 void Stage1::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
@@ -127,9 +131,11 @@ void Stage1::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
 			m_Torpedos[i]->draw(deviceContext, viewOrtho);
 		}
 	}
-	if (e)
-	{
-		e->draw(deviceContext, viewOrtho);
+	for (int i = 0; i < 100; i++) {
+		if (m_Enemy1s[i])
+		{
+			m_Enemy1s[i]->draw(deviceContext, viewOrtho);
+		}
 	}
-	
+
 }
