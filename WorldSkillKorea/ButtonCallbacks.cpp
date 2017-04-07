@@ -38,6 +38,5 @@ void CreditCallback::onSelected()
 
 void QuitCallback::onSelected()
 {
-	delete GameState::curLevel;
 	GameState::gameShouldRunning = false;
 }

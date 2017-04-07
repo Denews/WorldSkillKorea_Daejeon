@@ -6,6 +6,7 @@
 #include "View.h"
 #include "Torpedo.h"
 #include "GameTimer.h"
+#include "Enemy1.h"
 
 class Stage1 : public GameLevel
 {
@@ -33,4 +34,7 @@ private:
 	Torpedo** m_Torpedos;
 	int m_TorpedoArrayIndex;
 	GameTimer* m_TorpedoTimer;
+
+	Enemy1* e;
+	Texture* m_Monster1Texture;
 };
