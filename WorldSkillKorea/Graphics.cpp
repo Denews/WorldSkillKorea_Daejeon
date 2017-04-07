@@ -225,8 +225,7 @@ void Graphics::draw()
 	m_Shader->bind(m_DeviceContext);
 	m_DeviceContext->PSSetSamplers(0, 1, &m_State);
 
-	XMMATRIX o = XMMatrixOrthographicLH(GameConstants::width, GameConstants::height, 0.0f, 11.0f);
-	GameState::curLevel->draw(m_DeviceContext, o);
+	GameState::curLevel->draw(m_DeviceContext, XMLoadFloat4x4(&m_OrthoMatrix));
 
 	m_SwapChain->Present(0, 0);
 }

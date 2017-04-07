@@ -19,7 +19,7 @@ private:
 	Texture* m_BackgroundTexture;
 	Background* m_Background;
 
-	Texture* m_SubmarineTexture;
+	Texture* m_SubmarineTexture[2];
 	Submarine* m_Submarine;
 
 	View* m_View;
