@@ -3,5 +3,6 @@
 class ImageConstants
 {
 public:
-	static const char* tempPath;
+	static const char* ButtonPaths[];
+	static const char* FocusedbuttonPaths[];
 };
