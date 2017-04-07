@@ -27,6 +27,13 @@ Title::Title(ID3D11Device* device) :
 		Buttons[i]->unfocus();
 	}
 	Buttons[0]->focus();
+
+	Buttons[0]->setPosition(324.0f - 960.0f, 540.0f - 264.0f, 0.0f);
+	Buttons[1]->setPosition(960.0f - 960.0f, 540.0f - 264.0f, 0.0f);
+	Buttons[2]->setPosition(1553.0f - 960.0f, 540.0f - 264.0f, 0.0f);
+	Buttons[3]->setPosition(324.0f - 960.0f, 0.0f, 0.0f);
+	Buttons[4]->setPosition(960.0f - 960.0f, 0.0f, 0.0f);
+	Buttons[5]->setPosition(1553.0f - 960.0f, 0.0f, 0.0f);
 }
 
 Title::~Title()
@@ -41,30 +48,43 @@ Title::~Title()
 	delete[] FocusedButtonTextures;
 	delete[] ButtonCallbacks;
 	delete[] Buttons;
+	delete[] bg;
+	delete[] BackgroundTexture;
 }
 
 void Title::update(float deltaTime)
 {
 	bg->update(deltaTime);
 
-	if (GameState::input->getKey(DIK_RIGHTARROW) && ButtonIndex < 5) {
+	if (GameState::input->getKeyPressed(DIK_RIGHTARROW) && ButtonIndex < 5) {
 		Buttons[ButtonIndex]->unfocus();
 		ButtonIndex++;
 		Buttons[ButtonIndex]->focus();
 	}
-	if (GameState::input->getKey(DIK_LEFTARROW) && ButtonIndex > 0) {
+	if (GameState::input->getKeyPressed(DIK_LEFTARROW) && ButtonIndex > 0) {
 		Buttons[ButtonIndex]->unfocus();
 		ButtonIndex--;
 		Buttons[ButtonIndex]->focus();
+	}
+	if (GameState::input->getKeyPressed(DIK_UPARROW) && ButtonIndex > 2) {
+		Buttons[ButtonIndex]->unfocus();
+		ButtonIndex -= 3;
+		Buttons[ButtonIndex]->focus();
+	}
+	if (GameState::input->getKeyPressed(DIK_DOWNARROW) && ButtonIndex < 3) {
+		Buttons[ButtonIndex]->unfocus();
+		ButtonIndex += 3;
+		Buttons[ButtonIndex]->focus();
+	}
+
+	if (GameState::input->getKeyPressed(DIK_NUMPADENTER)) {
+		Buttons[ButtonIndex]->select();
 	}
 
 	for (int i = 0; i < 6; i++) {
 		Buttons[i]->update(deltaTime);
 	}
 
-	if (GameState::input->getKey(DIK_NUMPADENTER)) {
-		Buttons[ButtonIndex]->select();
-	}
 }
 
 void Title::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix)
