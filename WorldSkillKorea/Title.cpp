@@ -76,9 +76,11 @@ void Title::update(float deltaTime)
 		ButtonIndex += 3;
 		Buttons[ButtonIndex]->focus();
 	}
+
 	for (int i = 0; i < 6; i++) {
 		Buttons[i]->update(deltaTime);
 	}
+
 	if (GameState::input->getKeyPressed(DIK_NUMPADENTER)) {
 		Buttons[ButtonIndex]->select();
 	}
