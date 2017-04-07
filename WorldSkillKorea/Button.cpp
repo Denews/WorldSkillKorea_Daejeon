@@ -1,8 +1,8 @@
 #include "Button.h"
 
 Button::Button(ID3D11Device* device, Texture* focusedTexture, Texture* unfocusedTexture,
-	ButtonCallback* callback, float width, float height) :
-	GameObject(device, unfocusedTexture, width, height),
+	ButtonCallback* callback) :
+	GameObject(device, unfocusedTexture, 1024, 128),
 	m_FocusedTexture(focusedTexture),
 	m_UnfocusedTexture(unfocusedTexture),
 	m_Isfocused(false),

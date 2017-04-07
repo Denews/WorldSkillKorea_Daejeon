@@ -105,6 +105,27 @@
     <ClCompile Include="Background.cpp">
       <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>소스 파일\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Introduce.cpp">
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Credit.cpp">
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Ranking.cpp">
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="HowToPlay.cpp">
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonCallbacks.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -151,6 +172,27 @@
     </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>헤더 파일\Graphcis</Filter>
+    </ClInclude>
+    <ClInclude Include="Introduce.h">
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Credit.h">
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Ranking.h">
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="HowToPlay.h">
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonCallbacks.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>헤더 파일\Game\Level</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

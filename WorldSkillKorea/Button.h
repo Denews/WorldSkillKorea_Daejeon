@@ -12,7 +12,7 @@ class Button : GameObject
 public:
 	Button() = delete;
 	Button(Button&) = delete;
-	Button(ID3D11Device* device, Texture* focusedTexture, Texture* unfocusedTexture, ButtonCallback* callback, float width, float height);
+	Button(ID3D11Device* device, Texture* focusedTexture, Texture* unfocusedTexture, ButtonCallback* callback);
 	virtual ~Button() = default;
 
 	virtual void focus();

@@ -164,22 +164,30 @@
   <ItemGroup>
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ButtonCallbacks.cpp" />
+    <ClCompile Include="Credit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="HowToPlay.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Introduce.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Ranking.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Stage1.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="VertexArray.cpp" />
+    <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Credit.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConstants.h" />
     <ClInclude Include="GameLevel.h" />
@@ -188,11 +196,17 @@
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="HowToPlay.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Introduce.h" />
+    <ClInclude Include="Ranking.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Stage1.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="VertexArray.h" />
+    <ClInclude Include="View.h" />
+    <ClInclude Include="ButtonCallbacks.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="PixelShader.hlsl">
