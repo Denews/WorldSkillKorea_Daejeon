@@ -1,5 +1,9 @@
 #pragma once
 #include "GameLevel.h"
+#include "Background.h"
+#include "Texture.h"
+#include "Submarine.h"
+#include "View.h"
 
 class Stage1 : public GameLevel
 {
@@ -10,6 +14,13 @@ public:
 	virtual ~Stage1();
 
 	virtual void update(float deltaTime) override;
-	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho);
+	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho) override;
+private:
+	Texture* m_BackgroundTexture;
+	Background* m_Background;
 
+	Texture* m_SubmarineTexture;
+	Submarine* m_Submarine;
+
+	View* m_View;
 };
