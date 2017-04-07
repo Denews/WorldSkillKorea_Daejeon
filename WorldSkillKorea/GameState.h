@@ -13,6 +13,7 @@ public:
 	static GameTimer* frameTimer;
 	static Input* input;
 	static GameLevel* curLevel;
+	static bool gameShouldRunning;
 public:
 	static void initialize(HINSTANCE instanceHandle, int show);
 	static void shutdown();
