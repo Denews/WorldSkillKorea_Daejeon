@@ -28,10 +28,10 @@ void RankingCallback::onSelected()
 
 void CreditCallback::onSelected()
 {
-	GameState::curLevel = new
+	GameState::curLevel = new Credit(GameState::graphics->getDevice());
 }
 
 void QuitCallback::onSelected()
 {
-	
+	GameState::gameShouldRunning = false;
 }
