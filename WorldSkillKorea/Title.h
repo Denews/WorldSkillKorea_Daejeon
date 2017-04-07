@@ -1,6 +1,5 @@
 #pragma once
 #include "GameLevel.h"
-#include "Square.h"
 
 class Title : public GameLevel
 {

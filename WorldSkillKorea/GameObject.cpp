@@ -25,9 +25,9 @@ GameObject::~GameObject()
 	}
 }
 
-void GameObject::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix)
+void GameObject::draw(ID3D11DeviceContext* deviceContext, CXMMATRIX viewOrtho)
 {
-	fillMatrixBuffer(deviceContext, orthoMatrix);
+	fillMatrixBuffer(deviceContext, viewOrtho);
 
 	m_Texture->bind(deviceContext);
 
@@ -52,7 +52,7 @@ void GameObject::createMatrixBuffer(ID3D11Device* device)
 	}
 }
 
-void GameObject::fillMatrixBuffer(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho)
+void GameObject::fillMatrixBuffer(ID3D11DeviceContext* deviceContext, CXMMATRIX viewOrtho)
 {
 	D3D11_MAPPED_SUBRESOURCE mmr;
 	deviceContext->Map(m_MatrixBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mmr);
@@ -62,9 +62,9 @@ void GameObject::fillMatrixBuffer(ID3D11DeviceContext* deviceContext, CXMMATRIX 
 	XMMATRIX scale = XMMatrixScaling(m_Scale.x, m_Scale.y, 1.0f);
 
 	XMMATRIX world = scale * rotate * translate;
-	XMMATRIX worldOrtho = world * ortho;
+	XMMATRIX worldviewOrtho = world * viewOrtho;
 
-	XMStoreFloat4x4(static_cast<XMFLOAT4X4 *>(mmr.pData), XMMatrixTranspose(worldOrtho));
+	XMStoreFloat4x4(static_cast<XMFLOAT4X4 *>(mmr.pData), XMMatrixTranspose(worldviewOrtho));
 
 	deviceContext->Unmap(m_MatrixBuffer, 0);
 }

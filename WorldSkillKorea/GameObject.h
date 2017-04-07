@@ -10,10 +10,9 @@ public:
 	GameObject(ID3D11Device* device, Texture* texture, float width, float height);
 	virtual ~GameObject();
 
-	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix) final;
+	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX viewOrtho);
 	virtual void update(float deltaTime) = 0;
 
-protected:
 	virtual void setPosition(float x, float y, float z);
 	virtual XMFLOAT3 getPosition() const;
 	
@@ -27,7 +26,7 @@ protected:
 
 private:
 	void createMatrixBuffer(ID3D11Device* device);
-	void fillMatrixBuffer(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix);
+	void fillMatrixBuffer(ID3D11DeviceContext* deviceContext, CXMMATRIX viewOrtho);
 
 private:
 	XMFLOAT3 m_Position;

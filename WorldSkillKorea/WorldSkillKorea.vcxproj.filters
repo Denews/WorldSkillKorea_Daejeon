@@ -40,6 +40,24 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{96244e70-1300-4814-a2c6-3acb6c69f084}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\Level">
+      <UniqueIdentifier>{b0b33a42-c4a7-4f05-b9a1-2a71875a013d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Object">
+      <UniqueIdentifier>{5cd047df-f7b5-4016-93a4-e241df3b6383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game\Level">
+      <UniqueIdentifier>{e2c9e679-f1a4-4057-931e-10f066aae101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Game\Object">
+      <UniqueIdentifier>{9c7b6891-0247-4d15-a033-9424d94aaf53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Background">
+      <UniqueIdentifier>{cd42c4f2-a214-4d8e-9dfc-82329ff5db59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Enemy">
+      <UniqueIdentifier>{31e166c0-a2b1-4629-8d7a-76992a457187}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,14 +87,23 @@
     <ClCompile Include="VertexArray.cpp">
       <Filter>소스 파일\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>소스 파일\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>소스 파일\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
     <ClCompile Include="Title.cpp">
-      <Filter>소스 파일\Game</Filter>
+      <Filter>소스 파일\Game\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,17 +134,26 @@
     <ClInclude Include="VertexArray.h">
       <Filter>헤더 파일\Graphcis</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>헤더 파일\Game</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>헤더 파일\Graphcis</Filter>
     </ClInclude>
     <ClInclude Include="GameLevel.h">
-      <Filter>헤더 파일\Game</Filter>
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
     <ClInclude Include="Title.h">
-      <Filter>헤더 파일\Game</Filter>
+      <Filter>헤더 파일\Game\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,8 +165,77 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Submarine.dds">
+    <Image Include="res\Number.dds">
       <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Text.dds">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Text_R.dds">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\Background\Credit.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\HowToPlay.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Introduce.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Stage1.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Stage1_2.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Stage2.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Stage2_2.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Background\Title.dds">
+      <Filter>리소스 파일\Background</Filter>
+    </Image>
+    <Image Include="res\Enemy\BigBullet_G.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\BigBullet_R.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\BigBullet_Y.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Bullet_G.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Bullet_R.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Bullet_Y.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Jellyfish.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Monster1.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Monster2.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Monster3.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Monster4.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Seonge.dds">
+      <Filter>리소스 파일\Enemy</Filter>
+    </Image>
+    <Image Include="res\Enemy\Starfish.dds">
+      <Filter>리소스 파일\Enemy</Filter>
     </Image>
   </ItemGroup>
 </Project>

@@ -162,6 +162,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -171,11 +173,14 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConstants.h" />
     <ClInclude Include="GameLevel.h" />
@@ -186,6 +191,7 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="VertexArray.h" />
@@ -213,7 +219,30 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Submarine.dds" />
+    <Image Include="res\Background\Credit.dds" />
+    <Image Include="res\Background\HowToPlay.dds" />
+    <Image Include="res\Background\Introduce.dds" />
+    <Image Include="res\Background\Stage1.dds" />
+    <Image Include="res\Background\Stage1_2.dds" />
+    <Image Include="res\Background\Stage2.dds" />
+    <Image Include="res\Background\Stage2_2.dds" />
+    <Image Include="res\Background\Title.dds" />
+    <Image Include="res\Enemy\BigBullet_G.dds" />
+    <Image Include="res\Enemy\BigBullet_R.dds" />
+    <Image Include="res\Enemy\BigBullet_Y.dds" />
+    <Image Include="res\Enemy\Bullet_G.dds" />
+    <Image Include="res\Enemy\Bullet_R.dds" />
+    <Image Include="res\Enemy\Bullet_Y.dds" />
+    <Image Include="res\Enemy\Jellyfish.dds" />
+    <Image Include="res\Enemy\Monster1.dds" />
+    <Image Include="res\Enemy\Monster2.dds" />
+    <Image Include="res\Enemy\Monster3.dds" />
+    <Image Include="res\Enemy\Monster4.dds" />
+    <Image Include="res\Enemy\Seonge.dds" />
+    <Image Include="res\Enemy\Starfish.dds" />
+    <Image Include="res\Number.dds" />
+    <Image Include="res\Text.dds" />
+    <Image Include="res\Text_R.dds" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
