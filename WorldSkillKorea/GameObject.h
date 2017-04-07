@@ -1,8 +1,6 @@
 #pragma once
 #include "VertexArray.h"
 #include "Texture.h"
-#include <D3D11.h>
-#include <xnamath.h>
 
 class GameObject
 {

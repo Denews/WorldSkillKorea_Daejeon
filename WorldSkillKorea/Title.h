@@ -13,6 +13,4 @@ public:
 	virtual void update(float deltaTime) override;
 	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX orthoMatrix) override;
 private:
-	Square* m_Square;
-	Texture* m_Texture;
 };
