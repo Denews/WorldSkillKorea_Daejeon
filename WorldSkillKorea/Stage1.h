@@ -4,6 +4,8 @@
 #include "Texture.h"
 #include "Submarine.h"
 #include "View.h"
+#include "Torpedo.h"
+#include "GameTimer.h"
 
 class Stage1 : public GameLevel
 {
@@ -16,6 +18,9 @@ public:
 	virtual void update(float deltaTime) override;
 	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho) override;
 private:
+	static const int MAX_TORPEDO_COUNT = 100;
+	static const float TORPEDO_INTERVAL;
+private:
 	Texture* m_BackgroundTexture;
 	Background* m_Backgrounds[2];
 
@@ -23,4 +28,9 @@ private:
 	Submarine* m_Submarine;
 
 	View* m_View;
+
+	Texture* m_TorpedoTexture;
+	Torpedo** m_Torpedos;
+	int m_TorpedoArrayIndex;
+	GameTimer* m_TorpedoTimer;
 };

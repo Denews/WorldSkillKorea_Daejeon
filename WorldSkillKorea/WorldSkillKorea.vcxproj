@@ -184,6 +184,7 @@
     <ClCompile Include="Submarine.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Title.cpp" />
+    <ClCompile Include="Torpedo.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="View.cpp" />
   </ItemGroup>
@@ -210,6 +211,7 @@
     <ClInclude Include="Submarine.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Title.h" />
+    <ClInclude Include="Torpedo.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="View.h" />
     <ClInclude Include="ButtonCallbacks.h" />

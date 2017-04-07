@@ -44,7 +44,7 @@ void Submarine::update(float deltaTime)
 	x = XMMax(l, x + dx);
 	y = XMMin(XMMax(b, y + dy), t);
 
-	setPosition(x, y, 1.0f);
+	setPosition(x, y, 7.0f);
 }
 
 XMFLOAT3 Submarine::getPosition() const
