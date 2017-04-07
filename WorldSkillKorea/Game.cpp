@@ -42,6 +42,11 @@ bool Game::frame()
 
 	GameState::graphics->draw();
 
+	if (!GameState::gameShouldRunning)
+	{
+		result = false;
+	}
+
 	if (GameState::window->windowShouldClose())
 	{
 		result =  false;

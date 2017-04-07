@@ -6,6 +6,7 @@ Graphics* GameState::graphics = nullptr;
 GameTimer* GameState::frameTimer = nullptr;
 Input* GameState::input = nullptr;
 GameLevel* GameState::curLevel = nullptr;
+bool GameState::gameShouldRunning = true;
 
 void GameState::initialize(HINSTANCE instanceHandle, int show)
 {
