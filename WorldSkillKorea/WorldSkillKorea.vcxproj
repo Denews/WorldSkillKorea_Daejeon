@@ -165,6 +165,7 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonCallbacks.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Credit.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -189,6 +190,7 @@
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Credit.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameConstants.h" />

@@ -17,7 +17,7 @@ public:
 	virtual void draw(ID3D11DeviceContext* deviceContext, CXMMATRIX ortho) override;
 private:
 	Texture* m_BackgroundTexture;
-	Background* m_Background;
+	Background* m_Backgrounds[2];
 
 	Texture* m_SubmarineTexture[2];
 	Submarine* m_Submarine;

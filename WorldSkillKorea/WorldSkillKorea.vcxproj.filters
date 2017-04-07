@@ -135,6 +135,9 @@
     <ClCompile Include="ImageConstants.cpp">
       <Filter>소스 파일\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>소스 파일\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -207,6 +210,9 @@
       <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
     <ClInclude Include="ImageConstants.h">
+      <Filter>헤더 파일\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
       <Filter>헤더 파일\Utils</Filter>
     </ClInclude>
   </ItemGroup>
