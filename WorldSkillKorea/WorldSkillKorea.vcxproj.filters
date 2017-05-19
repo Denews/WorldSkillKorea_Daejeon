@@ -147,6 +147,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>소스 파일\Game\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy2.cpp">
+      <Filter>소스 파일\Game\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -234,6 +237,9 @@
       <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
     <ClInclude Include="SubmarineObserver.h">
+      <Filter>헤더 파일\Game\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy2.h">
       <Filter>헤더 파일\Game\Object</Filter>
     </ClInclude>
   </ItemGroup>

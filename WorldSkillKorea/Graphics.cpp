@@ -54,7 +54,7 @@ Graphics::Graphics(HWND windowHandle) :
 	sd.Flags = 0;
 	sd.OutputWindow = windowHandle;
 	sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-	sd.Windowed = true;
+	sd.Windowed = false;
 	sd.SampleDesc.Count = 4;
 	sd.SampleDesc.Quality = m_4xMsaaQuality - 1;
 
